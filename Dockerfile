@@ -27,8 +27,6 @@ ENV INFLUXDB_META_DIR=/var/lib/influxdb/meta \
     INFLUXDB_DATA_WAL_DIR=/var/lib/influxdb/wal \
     INFLUXDB_HINTED_HANDOFF_DIR=/var/lib/influxdb/hh
 
-#VOLUME ["/var/lib/influxdb"]
-
 COPY influxdb/influxdb.conf /etc/influxdb/influxdb.conf
 
 #======END InfluxDB======

@@ -3,10 +3,11 @@ Docker container for Grafana &amp; InfluxDB for JMeter.
 
 Inspired by https://github.com/sarkershantonu/jmeter-grafana-influxdb-docker but changed to have both Grafana and InfluxDB in the same image.
 
-Purpose of this image is to show realtime results of JMeter testing in testing and demonstration environments.
+Purpose of this image is to show realtime results of JMeter test plans in testing and demonstration environments.
+
 Sample dashboard is configured to show requests/seconds, average response time/second and couple of others.
 
-
+[Grafana UI](img/grafana_jmeter.png)
 
 # Usage
 
