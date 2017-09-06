@@ -7,7 +7,7 @@ Purpose of this image is to show realtime results of JMeter test plans in testin
 
 Sample dashboard is configured to show requests/seconds, average response time/second and couple of others.
 
-[Grafana UI](img/grafana_jmeter.png)
+![Grafana UI](img/grafana_jmeter.png)
 
 # Usage
 
