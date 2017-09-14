@@ -459,7 +459,7 @@
           },
           "yaxes": [
             {
-              "format": "ms",
+              "format": "none",
               "max": null,
               "min": null,
               "show": true
