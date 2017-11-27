@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:17.04
 
 WORKDIR /grain4jmeter
 
@@ -6,6 +6,20 @@ WORKDIR /grain4jmeter
 RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get install -y --no-install-recommends wget curl ca-certificates apt-transport-https
+
+#======START Grafana======
+
+ENV GF_SERVER_ROOT_URL http://localhost:3000
+
+RUN echo "deb https://packagecloud.io/grafana/stable/debian/ jessie main" >> /etc/apt/sources.list
+RUN curl https://packagecloud.io/gpg.key | apt-key add -
+RUN apt-get -y update
+RUN apt-get -y install grafana
+
+#======END Grafana======
+
+
+
 
 #======START InfluxDB======
 
@@ -20,7 +34,7 @@ ENV CONFIG_FILE="/etc/influxdb/influxdb.conf"
 ENV API_URL="http://localhost:8086"
 
 RUN wget https://dl.influxdata.com/influxdb/releases/influxdb_1.3.5_amd64.deb
-RUN sudo dpkg -i influxdb_1.3.5_amd64.deb
+RUN dpkg -i influxdb_1.3.5_amd64.deb
 
 ENV INFLUXDB_META_DIR=/var/lib/influxdb/meta \
     INFLUXDB_DATA_DIR=/var/lib/influxdb/data \
@@ -30,16 +44,6 @@ ENV INFLUXDB_META_DIR=/var/lib/influxdb/meta \
 COPY influxdb/influxdb.conf /etc/influxdb/influxdb.conf
 
 #======END InfluxDB======
-
-#======START Grafana======
-ENV GF_SERVER_ROOT_URL http://localhost:3000
-
-RUN wget https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana_4.4.3_amd64.deb
-RUN sudo apt-get install -y adduser libfontconfig
-RUN sudo dpkg -i grafana_4.4.3_amd64.deb
-RUN sudo update-rc.d grafana-server defaults 95 10
-
-#======END Grafana======
 
 COPY grafana/create_datasource.json .
 COPY grafana/jmeter_dashboard.json .

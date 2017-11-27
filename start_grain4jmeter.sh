@@ -1,7 +1,7 @@
 echo "Starting InfluxDB and Grafana..."
 
 influxd -config=/etc/influxdb/influxdb.conf > influx.log 2> influx_error.log &
-sudo service grafana-server start
+service grafana-server start
 echo "Waiting 3 seconds to make sure grafana starts.."
 sleep 3
 
