@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:latest
 
 WORKDIR /grain4jmeter
 
@@ -17,9 +17,6 @@ RUN apt-get -y update
 RUN apt-get -y install grafana
 
 #======END Grafana======
-
-
-
 
 #======START InfluxDB======
 
@@ -48,7 +45,7 @@ COPY influxdb/influxdb.conf /etc/influxdb/influxdb.conf
 COPY grafana/create_datasource.json .
 COPY grafana/jmeter_dashboard.json .
 
-COPY start_grain4jmeter.sh .
+COPY scripts/start_grain4jmeter.sh .
 RUN chmod 755 start_grain4jmeter.sh
 
 #Exposing influxdb port for jmeter
