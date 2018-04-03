@@ -68,7 +68,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "jmeter.findep.ok.count",
+              "measurement": "jmeter.grafanasampler.ok.count",
               "orderByTime": "ASC",
               "policy": "default",
               "query": "select mean(value) from /jmeter.all.count/ where $timeFilter group by time($interval) order asc",
@@ -186,7 +186,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "jmeter.findep.ok.avg",
+              "measurement": "jmeter.grafanasampler.ok.avg",
               "orderByTime": "ASC",
               "policy": "default",
               "refId": "A",
@@ -302,7 +302,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "jmeter.findep.ok.max",
+              "measurement": "jmeter.grafanasampler.ok.max",
               "orderByTime": "ASC",
               "policy": "default",
               "refId": "A",
@@ -418,7 +418,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "jmeter.findep.ko.count",
+              "measurement": "jmeter.grafanasampler.ko.count",
               "orderByTime": "ASC",
               "policy": "default",
               "refId": "A",
