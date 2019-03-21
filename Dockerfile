@@ -1,20 +1,17 @@
-FROM ubuntu:latest
+FROM ubuntu:16.04
 
 WORKDIR /grain4jmeter
 
-#Keep Package List Updated & software upgraded
+#Keep Package List Updated
 RUN apt-get -y update
-RUN apt-get -y upgrade
-RUN apt-get install -y --no-install-recommends wget curl ca-certificates apt-transport-https
+RUN apt-get install -y --no-install-recommends wget curl ca-certificates apt-transport-https libfontconfig
 
 #======START Grafana======
 
 ENV GF_SERVER_ROOT_URL http://localhost:3000
 
-RUN echo "deb https://packagecloud.io/grafana/stable/debian/ jessie main" >> /etc/apt/sources.list
-RUN curl https://packagecloud.io/gpg.key | apt-key add -
-RUN apt-get -y update
-RUN apt-get -y install grafana
+RUN wget https://dl.grafana.com/oss/release/grafana_6.0.2_amd64.deb
+RUN dpkg -i grafana_6.0.2_amd64.deb
 
 #======END Grafana======
 
