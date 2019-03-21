@@ -25,7 +25,7 @@ Run docker container, expose port 3000 and 2003:
 
 Open Grafana dashboard:
 
-- http://127.0.0.1:3000/dashboard/db/jmeter
+- [http://127.0.0.1:3000/dashboard/db/jmeter](http://127.0.0.1:3000/dashboard/db/jmeter)
 - Default username/password:
   - *admin/admin*
 
