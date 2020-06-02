@@ -35,7 +35,18 @@ Configure JMeter:
 
 # JMeter sample
 
-Sample JMeter test plan is [server/sample_jmeter_test.jmx](jmeter/sample_jmeter_test.jmx). It is simple test that sends HTTP GET request to google.com about 10 times per second.
+Sample JMeter test plan is [jmeter/sample_jmeter_test.jmx](jmeter/sample_jmeter_test.jmx). It is simple test that sends HTTP GET request to google.com about 10 times per second.
+
+## Jmeter tester
+
+The directory _jmeter_ includes JMeter test plan template and Dockerfile to build container to test web application using JMeter in the container.
+
+Use case is that if you have some web application that you want to test by sending simple GET requests, you can quickly set up Grafana to visualize requests and use the tester container to send requests to your web application.
+
+- First set up Grafana-container:
+  - `docker run -d -p 3000:3000 -p 2003:2003 --name grain4jmeter kazhar/grain4jmeter`
+- Then start the tester:
+  - `docker run -it --rm  kazhar/grain4jmeter:tester http://url:port/path/to/service`
 
 # License
 
