@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Sample test" enabled="true">
       <stringProp name="TestPlan.comments">Sample test using grain4jmeter Docker image.</stringProp>
@@ -15,7 +15,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="test.host" elementType="Argument">
             <stringProp name="Argument.name">test.host</stringProp>
-            <stringProp name="Argument.value">google.com</stringProp>
+            <stringProp name="Argument.value">ace-sample-ace-sample.itzroks-270001380t-lvi68e-6ccd7f378ae819553d37d5f2ee142bd6-0000.eu-gb.containers.appdomain.cloud</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">HTTP server to test</stringProp>
           </elementProp>
@@ -32,7 +32,7 @@
           </elementProp>
           <elementProp name="number.of.threads" elementType="Argument">
             <stringProp name="Argument.name">number.of.threads</stringProp>
-            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.value">20</stringProp>
             <stringProp name="Argument.desc">Number of threads/users for tests</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -52,6 +52,7 @@
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="grafanasampler" enabled="true">
